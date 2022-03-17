@@ -1,38 +1,320 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* ---------------
+    TYPOGROPHY
+------------------ */
+
+
+h1,
+h2,
+.footer-text {
+  text-align: center;
+}
+h1 {
+  margin-bottom: 0;
+  padding: 1em;
+}
+h2 {
+  margin: 1em auto;
+}
+h3 {
+  font-size: 1.135rem;
+}
+.header--title {
+  padding-bottom: 0;
+}
+.header--subtitle {
+  margin: 0 auto;
+}
+.footer-text {
+  font-size: .6rem;
+  padding-top: 2em;
+}
+
+
+/* ---------------
+    LAYOUT
+------------------ */
+/* NAV */
+
+.nav__ul {
+  width: 20%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav__list {
+  list-style-type: none;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+.nav__link {
+  color: inherit;
+  text-decoration: none;
+  padding: .4em 0;
+}
+
+
+/* -----------
+    HOME
+----------- */
+.main-article {
+  width: 90%;
+  border-bottom: 1px solid #B8BDB5;
+  margin: auto;
+}
+.codewars__logo {
+  width: 200px;
+  border-radius: 20px;
+}
+.codewars {
+  width: 90%;
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* -----------
+  PARAGRAPHS
+----------- */
+.p__nav__ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.p__nav__list {
+  display: inline-block;
+  padding: 0.5em;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.active-p {
+  font-weight: 900;
+}
+
+.paragraph {
+  color: inherit;
+  padding: 1em 1.5em;
+  line-height: 1.3rem;
+  max-width: 450px;
+}
+
+.main-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+}
+.container-flex {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.col {
+  text-align: center;
+}
+.hidden {
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+article p {
+  margin-bottom: 0;
+}
+.cv-ul {
+  list-style-type: none;
+}
+.left-li-group {
+  text-align: right;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#cv__nav__ul {
+  padding: 0;
+}
+.cv__nav__li{
+  display: inline-block;
+  margin: 0.5em;
+  cursor: pointer;
+}
+.experience-nav {
+  border-bottom: 1px solid;
+}
+
+@media (min-width: 700px) {
+  .pitch-paragraph {
+    font-size: 1.2rem;
   }
-  to {
-    transform: rotate(360deg);
+  body {
+    font-size: 1.135rem;
+  }
+}
+
+/* -----------
+    CUBE
+----------- */
+.scene,
+.cube,
+.cube__face {
+  width: 250px;
+  height: 250px;
+}
+
+.scene {
+  margin: 2em;
+  perspective: 400px;
+}
+
+.cube {
+  position: relative;
+  transform-style:preserve-3d;
+  transform: translateZ(-125px);
+  transition: transform .7s;
+}
+
+.cube.show-Frontend  { transform: translateZ(-125px) rotateY(   0deg); }
+.cube.show-API  { transform: translateZ(-125px) rotateY( -90deg); }
+.cube.show-Python   { transform: translateZ(-125px) rotateY(-180deg); }
+.cube.show-React   { transform: translateZ(-125px) rotateY(  90deg); }
+.cube.show-Django    { transform: translateZ(-125px) rotateX( -90deg); }
+.cube.show-Figma { transform: translateZ(-125px) rotateX(  90deg); }
+
+.cube__face {
+  position: absolute;
+  line-height: 250px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: black;
+  text-align: center;
+}
+
+.cube__face--front,
+.cube__face--right,
+.cube__face--back,
+.cube__face--left,
+.cube__face--top,
+.cube__face--bottom {
+  background: rgba(54, 57, 63 .8);
+  display: flex;
+}
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(125px);}
+.cube__face--right  { transform: rotateY( 90deg) translateZ(125px);}
+.cube__face--back   { transform: rotateY(180deg) translateZ(125px);}
+.cube__face--left   { transform: rotateY(-90deg) translateZ(125px);}
+.cube__face--top    { transform: rotateX( 90deg) translateZ(125px);}
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(125px); justify-content: space-around;}
+
+label {
+  margin-right: 10px;
+}
+.lightclr {
+  color: #E0E2DB;
+}
+input[type=radio] {
+  all: unset;
+}
+input[type=radio]:checked {
+  font-weight: 900;
+}
+.radio__label {
+  text-decoration: none;
+}
+.radio__label:hover {
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.cube__img {
+  width: 100%;
+  align-self: center;
+}
+.active {
+  border-bottom: 2px solid white;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.cube__h2 {
+  margin: 0 auto;
+}
+
+/* -----------
+HEARTRATE SIM
+----------- */
+
+#heart--left,
+#heart--right,
+#heart--bottom {
+  background: inherit;
+  position: absolute;
+}
+#heart--left,
+#heart--right {
+  width: 100px;
+  height: 100px;
+}
+#heart--right,
+#heart--bottom {
+  transform: rotate(45deg)
+}
+#heart--left {
+  border-radius: 0 0 100px 100px;
+  transform: rotate(135deg);
+}
+
+#heart--right {
+  border-radius: 100px 100px 0 0;
+  left: 100px;
+}
+
+#heart--bottom {
+  top: 84px;
+  left: 64px;
+  width: 72px;
+  height: 72px;
+}
+
+.flex {
+  display: flex;
+}
+.heart-container {
+  transform: scale(0.8);
+}
+#heart-element {
+  width: 200px;
+  height: 0;
+  /* This makes me able to position the heart accuratively relative to the input range. It is built out of 3 div parts that are formed by rotating and border-radius.*/
+  position: relative;
+  transform-origin: center center;
+  animation: container ease-out 1s infinite;
+}
+
+/* The heart's animation rate is connected to javascript */
+@keyframes container {
+  0% {
+    transform: scale(0.3);
+    background: rgb(196, 32, 18);
+  }
+  25% {
+    transform: scale(0.35);
+    background: rgb(237, 40, 5);
+  }
+  50% {
+    transform: scale(0.335);
+    background: rgb(237, 40, 5);
+  }
+  75% {
+    transform: scale(0.4);
+    background: rgb(237, 40, 5);
+  }
+  100% {
+    transform: scale(0.3);
+    background: rgb(196, 32, 18);
   }
 }
